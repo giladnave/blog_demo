@@ -1,12 +1,28 @@
 <%= form.fields_for :tags do |tag_form| %>
+    
   <div class="field">
-    <%= tag_form.label :name, 'Tag:' %>
-    <%= tag_form.text_field :name %>
+  	<% if not tag_form.object.nil? and not tag_form.object.new_record? %>
+		<%= tag_form.label :name, 'Tag:' %>
+		<%= tag_form.text_field :name %>
+	<%# else %>
+		<%#= tag_form.label :name, 'New Tag:' %>
+		<%#= select(:tag_form, :name, options_for_select([["Very Goog", 4], ["Goog", 3], ["Not So Bad", 2], ["Bad", 1], ["Very Bad", 0]])) %>
+	<% end %>
+		
+	<%# else %>
+		<%#= tag_form.label :name, 'Tag:' %>
+		<%#= tag_form.select_tag "Tag", options_for_select([["Very Goog", 4], ["Goog", 3], ["Not So Bad", 2], ["Bad", 1], ["Very Bad", 0]], :name %>
+	<%# end %>
+
   </div>
+  
+      	
   <% unless tag_form.object.nil? || tag_form.object.new_record? %>
-    <div class="field">
-      <%= tag_form.label :_destroy, 'Remove:' %>
-      <%= tag_form.check_box :_destroy %>
-    </div>
+	<div class="field">
+		<%= tag_form.label :_destroy, 'Remove:' %>
+		<%= tag_form.check_box :_destroy %>
+	</div>
   <% end %>
+  
+    
 <% end %>
