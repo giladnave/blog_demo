@@ -8,7 +8,7 @@ ActionMailer::Base.smtp_settings = {
   :enable_starttls_auto => true  
 }
 
-ActionMailer::Base.default_url_options[:host] = Rails.env.development? ? "localhost:3000" : "http://ec2-107-21-203-58.compute-1.amazonaws.com/";
+ActionMailer::Base.default_url_options[:host] = Rails.env.development? ? "localhost:3000" : "ec2-107-21-203-58.compute-1.amazonaws.com";
 
 require 'development_mail_interceptor'
 ActionMailer::Base.register_interceptor(DevelopmentMailInterceptor) if  Rails.env.development?
