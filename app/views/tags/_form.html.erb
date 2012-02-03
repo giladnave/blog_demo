@@ -1,13 +1,13 @@
 <%= form.fields_for :tags do |tag_form| %>
     
   <div class="field">
-  	<% if not tag_form.object.nil? and not tag_form.object.new_record? %>
+  	<%# if not tag_form.object.nil? and not tag_form.object.new_record? %>
 		<%= tag_form.label :name, 'Tag:' %>
 		<%= tag_form.text_field :name %>
 	<%# else %>
 		<%#= tag_form.label :name, 'New Tag:' %>
 		<%#= select(:tag_form, :name, options_for_select([["Very Goog", 4], ["Goog", 3], ["Not So Bad", 2], ["Bad", 1], ["Very Bad", 0]])) %>
-	<% end %>
+	<%# end %>
 		
 	<%# else %>
 		<%#= tag_form.label :name, 'Tag:' %>

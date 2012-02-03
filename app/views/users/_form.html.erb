@@ -19,7 +19,11 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
+  <div class="field">
+    <%= f.check_box :terms_of_use %>
+	<%= f.label :terms_of_use, "I Accept the Terms of Use" %>
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Register"%>
   </div>
 <% end %>
