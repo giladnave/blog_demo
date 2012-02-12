@@ -4,6 +4,7 @@ class UserMailer < ActionMailer::Base
   def registration_confirmation(user)
     @user = user
     attachments["gylion_logo_small.jpg"] = File.read("#{Rails.root}/public/images/gylion_logo_small.jpg")
+    attachments.inline["bundle.jpg"] = File.read("#{Rails.root}/public/images/bundle.jpg")
     mail(:to => "#{user.name} <#{user.email}>", :subject => "Registered")  
   end  
 end
